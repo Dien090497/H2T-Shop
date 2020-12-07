@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "502469284087",
+    "firebase_url": "https://h2tshop-4939d.firebaseio.com",
+    "project_id": "h2tshop-4939d",
+    "storage_bucket": "h2tshop-4939d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:502469284087:android:d9ab0c3c2975a807ce83f2",
+        "android_client_info": {
+          "package_name": "com.example.h2tshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "502469284087-138bb2fdh1cmj4l6n8meq4n68khm94f1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxLwTsZamLioU7XEVHObTJUgHa-f7Xfto"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "502469284087-138bb2fdh1cmj4l6n8meq4n68khm94f1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

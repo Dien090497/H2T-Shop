@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/phuKien"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3.7"
+            android:background="@drawable/bgr_phu_kien"
+            android:text="@string/jewelry_"
+            android:gravity="right|bottom"
+            android:padding="5dp"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            tools:ignore="NestedWeights,RtlHardcoded" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            />
+        <TextView
+            android:id="@+id/tui"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.6"
+            android:text="@string/bag_caps_lock"
+            android:background="@drawable/bgr_tui"
+            android:gravity="left|top"
+            android:padding="15dp"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            tools:ignore="RtlHardcoded" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+        <TextView
+            android:id="@+id/quanAo"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3.7"
+            android:background="@drawable/bgr_quan_ao"
+            android:gravity="center|bottom"
+            android:paddingBottom="45dp"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:text="@string/clothes_caps_lock"/>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="10dp"
+        android:layout_height="match_parent"
+        >
+    </TextView>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/bgr_sale"
+            tools:ignore="NestedWeights">
+            <LinearLayout
+                android:id="@+id/sale"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|bottom"
+                android:paddingBottom="80dp"
+                android:orientation="vertical">
+                <TextView
+                    android:textColor="@color/black"
+                    android:textSize="30sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sale_50"/>
+                <TextView
+                    android:id="@+id/shop"
+                    android:gravity="center"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/shop_caps_lock"
+                    android:background="@drawable/button_red"/>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            />
+        <TextView
+            android:id="@+id/giay"
+            android:background="@drawable/bgr_giay"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:gravity="left|top"
+            android:padding="20dp"
+            android:textSize="22sp"
+            android:textColor="@color/white"
+            android:text="@string/shoes_caps_lock"
+            tools:ignore="RtlHardcoded" />
+
+    </LinearLayout>
+</LinearLayout>

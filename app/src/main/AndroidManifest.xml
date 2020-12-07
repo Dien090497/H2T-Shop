@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.h2tshop.h2tshop">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo_label"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo_label"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.H2TShop"
+        android:fullBackupContent="@xml/backup_descriptor">
+        <activity
+            android:name=".activity.SaleShopActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".activity.DetailJewelryActivity"
+            android:parentActivityName=".activity.ShopJewelryActivity"/>
+        <activity android:name=".activity.ShopJewelryActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".activity.DetailShoesActivity"
+            android:parentActivityName=".activity.ShopShoesActivity" />
+        <activity
+            android:name=".activity.ShopShoesActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".activity.DetailClothesActivity"
+            android:parentActivityName=".activity.ShopClothesActivity" />
+        <activity
+            android:name=".activity.ShopClothesActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".activity.CartActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".activity.DetailBagActivity"
+            android:parentActivityName=".activity.ShopBagActivity" />
+        <activity
+            android:name=".activity.ShopBagActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".activity.ChangeAvatarActivity"
+            android:parentActivityName=".activity.EditInfoActivity" />
+        <activity
+            android:name=".activity.ChangeInfoActivity"
+            android:parentActivityName=".activity.EditInfoActivity" />
+        <activity
+            android:name=".activity.ChangePasswordActivity"
+            android:parentActivityName=".activity.EditInfoActivity" />
+        <activity
+            android:name=".activity.EditInfoActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".activity.WishListActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".activity.AddInfoActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.H2TShop.NoActionBar" />
+        <activity android:name=".activity.LoginSignupActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:parentActivityName=".activity.LoginSignupActivity" />
+        <activity
+            android:name=".activity.SignUpActivity"
+            android:parentActivityName=".activity.LoginSignupActivity" />
+    </application>
+
+</manifest>
