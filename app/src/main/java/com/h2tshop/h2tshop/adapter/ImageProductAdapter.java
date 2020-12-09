@@ -1,6 +1,5 @@
 package com.h2tshop.h2tshop.adapter;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +16,7 @@ import java.util.List;
 public class ImageProductAdapter extends PagerAdapter {
     private final List<String> listLink;
 
-    public ImageProductAdapter(Context context, List<String> listLink) {
+    public ImageProductAdapter(List<String> listLink) {
         this.listLink = listLink;
     }
 

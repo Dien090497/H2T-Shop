@@ -29,7 +29,6 @@ import com.h2tshop.h2tshop.activity.ShopBagActivity;
 import com.h2tshop.h2tshop.activity.ShopClothesActivity;
 import com.h2tshop.h2tshop.activity.ShopJewelryActivity;
 import com.h2tshop.h2tshop.activity.ShopShoesActivity;
-import com.h2tshop.h2tshop.activity.WishListActivity;
 import com.h2tshop.h2tshop.adapter.AutoCompleteProductAdapter;
 import com.h2tshop.h2tshop.model.AllProduct;
 
@@ -144,42 +143,39 @@ public class ShopFragment extends Fragment {
 
                 autoCompleteTextView.setAdapter(adapter);
 
-                autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        AllProduct product = allProductList.get(position);
+                autoCompleteTextView.setOnItemClickListener((parent, view, position, id) -> {
+                    AllProduct product = allProductList.get(position);
 
-                        switch (product.getType()){
-                            case "Tui":
-                                Intent iBag = new Intent(getActivity(), DetailBagActivity.class);
-                                Bundle bBag = new Bundle();
-                                bBag.putString("id",product.getId());
-                                iBag.putExtras(bBag);
-                                startActivity(iBag);
-                                break;
-                            case "QuanAo":
-                                Intent iClothes = new Intent(getActivity(), DetailClothesActivity.class);
-                                Bundle bClothes = new Bundle();
-                                bClothes.putString("id",product.getId());
-                                iClothes.putExtras(bClothes);
-                                startActivity(iClothes);
-                                break;
-                            case "PhuKien":
-                                Intent iJewelry = new Intent(getActivity(), DetailJewelryActivity.class);
-                                Bundle bJewelry = new Bundle();
-                                bJewelry.putString("id",product.getId());
-                                iJewelry.putExtras(bJewelry);
-                                startActivity(iJewelry);
-                                break;
-                            case "GiayDa":
-                                Intent iShoes = new Intent(getActivity(), DetailShoesActivity.class);
-                                Bundle bShoes = new Bundle();
-                                bShoes.putString("id",product.getId());
-                                iShoes.putExtras(bShoes);
-                                startActivity(iShoes);
-                                break;
+                    switch (product.getType()){
+                        case "Tui":
+                            Intent iBag = new Intent(getActivity(), DetailBagActivity.class);
+                            Bundle bBag = new Bundle();
+                            bBag.putString("id",product.getId());
+                            iBag.putExtras(bBag);
+                            startActivity(iBag);
+                            break;
+                        case "QuanAo":
+                            Intent iClothes = new Intent(getActivity(), DetailClothesActivity.class);
+                            Bundle bClothes = new Bundle();
+                            bClothes.putString("id",product.getId());
+                            iClothes.putExtras(bClothes);
+                            startActivity(iClothes);
+                            break;
+                        case "PhuKien":
+                            Intent iJewelry = new Intent(getActivity(), DetailJewelryActivity.class);
+                            Bundle bJewelry = new Bundle();
+                            bJewelry.putString("id",product.getId());
+                            iJewelry.putExtras(bJewelry);
+                            startActivity(iJewelry);
+                            break;
+                        case "GiayDa":
+                            Intent iShoes = new Intent(getActivity(), DetailShoesActivity.class);
+                            Bundle bShoes = new Bundle();
+                            bShoes.putString("id",product.getId());
+                            iShoes.putExtras(bShoes);
+                            startActivity(iShoes);
+                            break;
 
-                        }
                     }
                 });
             }

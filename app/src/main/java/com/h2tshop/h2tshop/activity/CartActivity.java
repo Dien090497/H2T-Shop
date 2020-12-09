@@ -72,7 +72,6 @@ public class CartActivity extends AppCompatActivity {
 
 
         //  Pay
-        codeSale = findViewById(R.id.codeSale);
 
 
     }

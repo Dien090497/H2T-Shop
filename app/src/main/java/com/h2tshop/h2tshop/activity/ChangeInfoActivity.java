@@ -7,7 +7,6 @@ import androidx.appcompat.widget.Toolbar;
 import android.app.Dialog;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 

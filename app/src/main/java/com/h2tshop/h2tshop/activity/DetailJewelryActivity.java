@@ -210,19 +210,17 @@ public class DetailJewelryActivity extends AppCompatActivity {
         String _email= getNameUser();
         Intent iJewelry = getIntent();
         Bundle bJewelry = iJewelry.getExtras();
-
         myData.child("Account").child(_email).child("wishList").child(bJewelry.getString("id")).child("favorite").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 try {
                     boolean like = (boolean) snapshot.getValue();
-                    if (like==true){
+                    if (like){
                         imgFavorite.setImageDrawable(getResources().getDrawable(R.drawable.ic_like));
                     }else {
                         imgFavorite.setImageDrawable(getResources().getDrawable(R.drawable.ic_unlike));
                     }
                 }catch (Exception e){
-
                     myData.child("PhuKien").child(bJewelry.getString("id")).child("link").child("link1").addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -233,29 +231,22 @@ public class DetailJewelryActivity extends AppCompatActivity {
 
                             myData.child("Account").child(_email).child("wishList").child(bJewelry.getString("id")).setValue(wishList);
                         }
-
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
-
                         }
                     });
-
-
                 }
-
                 imgFavorite.setOnClickListener(v -> {
-
                     boolean like = (boolean) snapshot.getValue();
-                    if (like==true){
+                    if (like){
                         like=false;
                         myData.child("Account").child(_email).child("wishList").child(bJewelry.getString("id")).child("favorite").setValue(like);
-                    }else if (like==false){
+                    }else if (!like){
                         like = true;
                         myData.child("Account").child(_email).child("wishList").child(bJewelry.getString("id")).child("favorite").setValue(like);
                     }
                 });
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -272,7 +263,7 @@ public class DetailJewelryActivity extends AppCompatActivity {
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 linkList.add(snapshot.getValue().toString());
 
-                imageProductAdapter = new ImageProductAdapter(DetailJewelryActivity.this,linkList);
+                imageProductAdapter = new ImageProductAdapter(linkList);
                 pager.setAdapter(imageProductAdapter);
 
                 circleIndicator.setViewPager(pager);

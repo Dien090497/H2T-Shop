@@ -107,7 +107,7 @@ public class DetailClothesActivity extends AppCompatActivity {
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 linkList.add(snapshot.getValue().toString());
 
-                imageProductAdapter = new ImageProductAdapter(DetailClothesActivity.this,linkList);
+                imageProductAdapter = new ImageProductAdapter(linkList);
                 pager.setAdapter(imageProductAdapter);
 
                 circleIndicator.setViewPager(pager);
@@ -144,7 +144,7 @@ public class DetailClothesActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 try {
                     boolean like = (boolean) snapshot.getValue();
-                    if (like==true){
+                    if (like){
                         imgFavorite.setImageDrawable(getResources().getDrawable(R.drawable.ic_like));
                     }else {
                         imgFavorite.setImageDrawable(getResources().getDrawable(R.drawable.ic_unlike));
@@ -198,10 +198,10 @@ public class DetailClothesActivity extends AppCompatActivity {
                     Bundle bBag = iBag.getExtras();
 
                     boolean like = (boolean) snapshot.getValue();
-                    if (like==true){
+                    if (like){
                         like=false;
                         myData.child("Account").child(_email1.toString()).child("wishList").child(bBag.getString("id")).child("favorite").setValue(like);
-                    }else if (like==false){
+                    }else if (!like){
                         like = true;
                         myData.child("Account").child(_email1.toString()).child("wishList").child(bBag.getString("id")).child("favorite").setValue(like);
                     }

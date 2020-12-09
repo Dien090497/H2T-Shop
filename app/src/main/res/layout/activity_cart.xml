@@ -31,28 +31,6 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="5"
-            android:orientation="vertical"
-            android:gravity="center"
-            tools:ignore="NestedWeights">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/promotion_code"
-                android:textColor="@color/black"/>
-            <EditText
-                android:layout_width="120dp"
-                android:layout_height="46dp"
-                android:id="@+id/codeSale"
-                android:background="@drawable/button_red"
-                android:gravity="center"
-                android:inputType="text"
-                android:autofillHints=""
-                tools:ignore="LabelFor" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="5"
             android:gravity="center">
             <TextView
                 android:layout_width="wrap_content"

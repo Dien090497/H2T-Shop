@@ -8,7 +8,6 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.GridView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -67,7 +66,7 @@ public class WishListActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 WishList wishList = snapshot.getValue(WishList.class);
-                if (wishList.isFavorite() == true){
+                if (wishList.isFavorite()){
                     wishLists.add(wishList);
                 }
 

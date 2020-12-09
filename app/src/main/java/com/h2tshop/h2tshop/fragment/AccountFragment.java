@@ -3,7 +3,6 @@
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -90,7 +89,7 @@ import java.util.Objects;
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 WishList wl = snapshot.getValue(WishList.class);
 
-                if (wl.isFavorite() == true){
+                if (wl.isFavorite()){
                     wishLists.add(wl);
                 }
 

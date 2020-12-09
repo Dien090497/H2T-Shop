@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Filter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,13 +13,13 @@ import androidx.annotation.Nullable;
 
 import com.h2tshop.h2tshop.R;
 import com.h2tshop.h2tshop.model.AllProduct;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("unchecked")
 public class AutoCompleteProductAdapter extends ArrayAdapter<AllProduct> {
-    private List<AllProduct> productListAll;
+    private final List<AllProduct> productListAll;
 
     public AutoCompleteProductAdapter(@NonNull Context context, @NonNull List<AllProduct> productList) {
         super(context, 0, productList);
@@ -51,7 +50,7 @@ public class AutoCompleteProductAdapter extends ArrayAdapter<AllProduct> {
         return convertView;
     }
 
-    private Filter filter = new Filter() {
+    private final Filter filter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
             FilterResults results  = new FilterResults();

@@ -204,7 +204,7 @@ import me.relex.circleindicator.CircleIndicator;
              public void onDataChange(@NonNull DataSnapshot snapshot) {
                  try {
                      boolean like = (boolean) snapshot.getValue();
-                     if (like==true){
+                     if (like){
                          imgFavorite.setImageDrawable(getResources().getDrawable(R.drawable.ic_like));
                      }else {
                          imgFavorite.setImageDrawable(getResources().getDrawable(R.drawable.ic_unlike));
@@ -235,10 +235,10 @@ import me.relex.circleindicator.CircleIndicator;
                  imgFavorite.setOnClickListener(v -> {
 
                      boolean like = (boolean) snapshot.getValue();
-                     if (like==true){
+                     if (like){
                          like=false;
                          myData.child("Account").child(getUserName()).child("wishList").child(getIDProduct()).child("favorite").setValue(like);
-                     }else if (like==false){
+                     }else if (!like){
                          like = true;
                          myData.child("Account").child(getUserName()).child("wishList").child(getIDProduct()).child("favorite").setValue(like);
                      }
@@ -259,7 +259,7 @@ import me.relex.circleindicator.CircleIndicator;
              public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                  linkList.add(snapshot.getValue().toString());
 
-                 imageProductAdapter = new ImageProductAdapter(DetailBagActivity.this,linkList);
+                 imageProductAdapter = new ImageProductAdapter(linkList);
                  pager.setAdapter(imageProductAdapter);
 
                  circleIndicator.setViewPager(pager);
