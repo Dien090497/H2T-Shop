@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EntryPointsManager">
+    <entry_points version="2.0">
+      <entry_point TYPE="field" FQNAME="com.h2tshop.h2tshop.adapter.WishListAdapter context" />
+      <entry_point TYPE="field" FQNAME="com.h2tshop.h2tshop.adapter.ShopShoesAdapter context" />
+      <entry_point TYPE="field" FQNAME="com.h2tshop.h2tshop.adapter.ShopJewelryAdapter context" />
+      <entry_point TYPE="field" FQNAME="com.h2tshop.h2tshop.adapter.ShopClothesAdapter context" />
+      <entry_point TYPE="field" FQNAME="com.h2tshop.h2tshop.adapter.ShopBagAdapter context" />
+      <entry_point TYPE="field" FQNAME="com.h2tshop.h2tshop.adapter.SaleShopAdapter context" />
+    </entry_points>
+    <pattern value="com.h2tshop.h2tshop.model.Bill" />
+    <pattern value="com.h2tshop.h2tshop.model.Bill" method="Bill" />
+    <pattern value="com.h2tshop.h2tshop.model.Bill" method="getEmail" />
+    <pattern value="com.h2tshop.h2tshop.model.Bill" method="getPrice" />
+    <pattern value="com.h2tshop.h2tshop.model.Bill" method="getProduct" />
+    <pattern value="com.h2tshop.h2tshop.model.Bill" method="isStatus" />
+    <pattern value="com.h2tshop.h2tshop.model.Bill" method="setEmail" />
+    <pattern value="com.h2tshop.h2tshop.model.Bill" method="setPrice" />
+    <pattern value="com.h2tshop.h2tshop.model.Bill" method="setProduct" />
+    <pattern value="com.h2tshop.h2tshop.model.Bill" method="setStatus" />
+    <pattern value="com.h2tshop.h2tshop.model.WishList" method="getLink" />
+    <pattern value="com.h2tshop.h2tshop.model.WishList" method="setFavorite" />
+    <pattern value="com.h2tshop.h2tshop.model.WishList" method="setGia" />
+    <pattern value="com.h2tshop.h2tshop.model.WishList" method="setId" />
+    <pattern value="com.h2tshop.h2tshop.model.WishList" method="setLink" />
+    <pattern value="com.h2tshop.h2tshop.model.WishList" method="setTen" />
+    <pattern value="com.h2tshop.h2tshop.model.WishList" method="setType" />
+    <pattern value="com.h2tshop.h2tshop.model.WishList" />
+    <pattern value="com.h2tshop.h2tshop.adapter.ShopJewelryAdapter" />
+    <pattern value="com.h2tshop.h2tshop.adapter.ShopClothesAdapter" />
+    <pattern value="com.h2tshop.h2tshop.adapter.ShopBagAdapter" />
+    <pattern value="com.h2tshop.h2tshop.adapter.SaleShopAdapter" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
