@@ -17,6 +17,9 @@
         android:id="@+id/gioHang"
         android:title="@string/cart"/>
     <item
+        android:id="@+id/bill"
+        android:title="@string/bill"/>
+    <item
         android:id="@+id/about"
         android:title="@string/about"/>
 

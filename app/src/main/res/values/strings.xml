@@ -39,6 +39,7 @@
     <string name="account">Tài Khoản</string>
     <string name="cart">Giỏ Hàng</string>
     <string name="about">Về Chúng Tôi</string>
+    <string name="bill">Hóa Đơn Giao Dịch</string>
     <string name="logout">Đăng Xuất</string>
     <string name="clothes">Quần áo</string>
     <string name="bag">Túi</string>
@@ -65,7 +66,10 @@
     <string name="shop_products">Shop Products</string>
     <string name="sale_caps_lock">SALE</string>
     <string name="qnt">Qnt:</string>
-    <string name="price">Gía:</string>
+    <string name="price">Giá:  </string>
+    <string name="id_bill">Mã HĐ:  </string>
+    <string name="delivering">Đang chuyển</string>
+    <string name="delivered">Đã chuyển</string>
 
 
 </resources>
