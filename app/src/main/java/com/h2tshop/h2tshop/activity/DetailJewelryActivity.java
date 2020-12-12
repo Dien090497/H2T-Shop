@@ -133,7 +133,7 @@ public class DetailJewelryActivity extends AppCompatActivity {
                                 tenSp.getText().toString(),
                                 "",
                                 "GiayDa",
-                                snapshot.getValue().toString(),
+                                Objects.requireNonNull(snapshot.getValue()).toString(),
                                 sdf.format(calendar.getTime()),
                                 Integer.parseInt(qnt.getText().toString()),
                                 Double.parseDouble(giaSp.getText().toString()));
@@ -164,7 +164,7 @@ public class DetailJewelryActivity extends AppCompatActivity {
 
             ok.setOnClickListener(v12 -> {
 
-                if (textInputLayoutQNT.getEditText().getText().toString().trim().equals("")) {
+                if (Objects.requireNonNull(textInputLayoutQNT.getEditText()).getText().toString().trim().equals("")) {
                     textInputLayoutQNT.setError("Số lượng trống!");
                 } else {
                     String _qnt = textInputLayoutQNT.getEditText().getText().toString().trim();
@@ -188,7 +188,7 @@ public class DetailJewelryActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Jewelry jewelry = snapshot.getValue(Jewelry.class);
-                tenSp.setText(jewelry.getTen());
+                tenSp.setText(Objects.requireNonNull(jewelry).getTen());
                 mota.setText(jewelry.getMota());
                 if (jewelry.getSale()>0){
                     sale.setText("(-"+df.format(jewelry.getSale())+"%)");
@@ -226,7 +226,7 @@ public class DetailJewelryActivity extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             WishList wishList = new WishList(bJewelry.getString("id"),
                                     tenSp.getText().toString(),
-                                    snapshot.getValue().toString(),
+                                    Objects.requireNonNull(snapshot.getValue()).toString(),
                                     "PhuKien",false,Double.parseDouble(giaSp.getText().toString()));
 
                             myData.child("Account").child(_email).child("wishList").child(bJewelry.getString("id")).setValue(wishList);
@@ -261,7 +261,7 @@ public class DetailJewelryActivity extends AppCompatActivity {
             @SuppressLint("ResourceAsColor")
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                linkList.add(snapshot.getValue().toString());
+                linkList.add(Objects.requireNonNull(snapshot.getValue()).toString());
 
                 imageProductAdapter = new ImageProductAdapter(linkList);
                 pager.setAdapter(imageProductAdapter);

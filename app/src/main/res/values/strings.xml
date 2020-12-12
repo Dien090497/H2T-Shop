@@ -11,6 +11,7 @@
     <string name="add_to_cart">THÊM VÀO GIỎ HÀNG</string>
     <string name="title_detail">Chi tiết sản phẩm</string>
     <string name="sdf">ssmmhhddMMyyyy</string>
+    <string name="sdf2">dd/MM/yyyy</string>
     <string name="pay">Thanh Toán</string>
     <string name="how_many">Bạn muốn mua bao nhiêu?</string>
     <string name="h2t_shop">H2T Shop</string>

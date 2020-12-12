@@ -66,7 +66,7 @@ public class WishListActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 WishList wishList = snapshot.getValue(WishList.class);
-                if (wishList.isFavorite()){
+                if (Objects.requireNonNull(wishList).isFavorite()){
                     wishLists.add(wishList);
                 }
 

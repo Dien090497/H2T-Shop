@@ -89,7 +89,7 @@ import java.util.Objects;
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 WishList wl = snapshot.getValue(WishList.class);
 
-                if (wl.isFavorite()){
+                if (Objects.requireNonNull(wl).isFavorite()){
                     wishLists.add(wl);
                 }
 

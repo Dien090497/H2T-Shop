@@ -25,6 +25,8 @@ import com.h2tshop.h2tshop.activity.ShopJewelryActivity;
 import com.h2tshop.h2tshop.activity.ShopShoesActivity;
 import com.h2tshop.h2tshop.model.Sale;
 
+import java.util.Objects;
+
 public class HomeFragment extends Fragment {
     DatabaseReference myData;
     
@@ -91,7 +93,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 Sale sale = snapshot.getValue(Sale.class);
-                sale.setType("Tui");
+                Objects.requireNonNull(sale).setType("Tui");
                 myData.child("AllProduct").child(sale.getId()).setValue(sale);
 
             }
@@ -122,7 +124,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 Sale sale = snapshot.getValue(Sale.class);
-                sale.setType("QuanAo");
+                Objects.requireNonNull(sale).setType("QuanAo");
                 myData.child("AllProduct").child(sale.getId()).setValue(sale);
             }
 
@@ -151,7 +153,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 Sale sale = snapshot.getValue(Sale.class);
-                sale.setType("PhuKien");
+                Objects.requireNonNull(sale).setType("PhuKien");
                 myData.child("AllProduct").child(sale.getId()).setValue(sale);
             }
 
@@ -180,7 +182,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 Sale sale = snapshot.getValue(Sale.class);
-                sale.setType("GiayDa");
+                Objects.requireNonNull(sale).setType("GiayDa");
                 myData.child("AllProduct").child(sale.getId()).setValue(sale);
             }
 

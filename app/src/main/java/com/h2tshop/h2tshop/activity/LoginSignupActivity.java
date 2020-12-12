@@ -11,6 +11,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.h2tshop.h2tshop.MainActivity;
 import com.h2tshop.h2tshop.R;
 
+import java.util.Objects;
+
 public class LoginSignupActivity extends AppCompatActivity {
     FirebaseAuth myAuth;
     FirebaseUser user;
@@ -25,7 +27,7 @@ public class LoginSignupActivity extends AppCompatActivity {
         user= myAuth.getCurrentUser();
 
         try {
-            String email = user.getEmail();
+            String email = Objects.requireNonNull(user).getEmail();
             if (email!=null){
                 Intent intent = new Intent(LoginSignupActivity.this, MainActivity.class);
                 startActivity(intent);

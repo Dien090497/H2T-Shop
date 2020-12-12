@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -27,7 +28,9 @@ import com.h2tshop.h2tshop.model.Bill;
 import com.h2tshop.h2tshop.model.Cart;
 
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Objects;
 
@@ -87,19 +90,9 @@ public class CartActivity extends AppCompatActivity {
 
                 setListView(cartList);
 
-                double _total =0;
-                StringBuilder _product = new StringBuilder();
-
-                for (int i = 0;i<cartList.size();i++) {
-                    _total = _total+(cartList.get(i).getGia()*cartList.get(i).getQnt());
-                    _product.append(cartList.get(i).getTen()).append(" - Size: ").append(cartList.get(i).getSize()).append(" - Qnt: ").append(cartList.get(i).getQnt()).append(" ||| ");
-                }
-
-
-                total.setText(df.format(_total));
+                setTotal(cartList);
 
                 pay = findViewById(R.id.pay);
-                String final_product = _product.toString();
                 pay.setOnClickListener(v -> {
                     if (cartList.size()!=0){
                         Dialog dialog = new Dialog(CartActivity.this);
@@ -109,13 +102,23 @@ public class CartActivity extends AppCompatActivity {
                         TextView huy = dialog.findViewById(R.id.huy);
 
                         ok.setOnClickListener(v12 -> {
-                            Bill bill = new Bill(myUser.getEmail(), final_product, Double.parseDouble(total.getText().toString()), false);
-                            myData.child("Bill").push().setValue(bill).addOnSuccessListener(aVoid -> {
-                                myData.child("Account").child(getNameUser()).child("Cart").setValue(null);
-                                cartList.clear();
-                                setListView(cartList);
-                                dialog.dismiss();
-                            });
+
+                            Calendar calendar = Calendar.getInstance();
+
+                            @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf  = new SimpleDateFormat(getString(R.string.sdf));
+                            @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf2  = new SimpleDateFormat(getString(R.string.sdf2));
+                                Bill bill = new Bill(myUser.getEmail(),sdf.format(calendar.getTime()), Double.parseDouble(total.getText().toString()), false,sdf2.format(calendar.getTime()));
+                                myData.child("Bill").child(bill.getIdBill()).setValue(bill).addOnSuccessListener(aVoid -> {
+                                    for (Cart c : cartList){
+                                        myData.child("Bill").child(bill.getIdBill()).child("product").child(c.getId()).setValue(c);
+
+                                    }
+                                    myData.child("Account").child(getNameUser()).child("Cart").setValue(null);
+                                    cartList.clear();
+                                    setTotal(cartList);
+                                    setListView(cartList);
+                                    dialog.dismiss();
+                                });
 
                         });
 
@@ -139,6 +142,8 @@ public class CartActivity extends AppCompatActivity {
                         myData.child("Account").child(getNameUser()).child("Cart").child(iCheck).setValue(null).addOnSuccessListener(aVoid -> {
 
                             cartList.remove(position);
+
+                            setTotal(cartList);
 
                             setListView(cartList);
 
@@ -178,6 +183,14 @@ public class CartActivity extends AppCompatActivity {
 
             }
         });
+    }
+    private void setTotal(List<Cart> cartList){
+        double _total =0;
+
+        for (Cart cart : cartList) {
+            _total = _total+cart.getGia();
+        }
+        total.setText(df.format(_total));
     }
 
     private String getNameUser(){

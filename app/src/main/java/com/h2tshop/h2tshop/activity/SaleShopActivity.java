@@ -61,7 +61,7 @@ public class SaleShopActivity extends AppCompatActivity {
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 Sale sale = snapshot.getValue(Sale.class);
 
-                if  (sale.getSale()>0){
+                if  (Objects.requireNonNull(sale).getSale()>0){
                     saleList.add(sale);
                 }
 

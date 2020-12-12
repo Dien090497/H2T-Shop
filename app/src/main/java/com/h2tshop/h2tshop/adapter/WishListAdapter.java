@@ -84,7 +84,7 @@ public class WishListAdapter extends BaseAdapter {
         myData.child("Account").child(getNameUser()).child("wishList").child(wishList.getId()).child("link").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Picasso.get().load(snapshot.getValue().toString()).into(holder.imgProduct);
+                Picasso.get().load(Objects.requireNonNull(snapshot.getValue()).toString()).into(holder.imgProduct);
             }
 
             @Override
@@ -100,7 +100,7 @@ public class WishListAdapter extends BaseAdapter {
         myAuth = FirebaseAuth.getInstance();
         myUser= myAuth.getCurrentUser();
 
-        String email = myUser.getEmail();
+        String email = Objects.requireNonNull(myUser).getEmail();
 
         StringBuilder _email= new StringBuilder();
         for (int i = 0; i < Objects.requireNonNull(email).length(); i++) {

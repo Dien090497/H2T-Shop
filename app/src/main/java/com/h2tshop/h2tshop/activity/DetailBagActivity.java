@@ -127,7 +127,7 @@ import me.relex.circleindicator.CircleIndicator;
                                  tenSp.getText().toString(),
                                  size.getText().toString(),
                                  "Tui",
-                                 snapshot.getValue().toString(),
+                                 Objects.requireNonNull(snapshot.getValue()).toString(),
                                  sdf.format(calendar.getTime()),
                                  Integer.parseInt(qnt.getText().toString()),
                                  Double.parseDouble(giaSp.getText().toString()));
@@ -158,7 +158,7 @@ import me.relex.circleindicator.CircleIndicator;
 
              ok.setOnClickListener(v12 -> {
 
-                 if (textInputLayoutQNT.getEditText().getText().toString().trim().equals("")) {
+                 if (Objects.requireNonNull(textInputLayoutQNT.getEditText()).getText().toString().trim().equals("")) {
                      textInputLayoutQNT.setError("Số lượng trống!");
                  } else {
                      String _qnt = textInputLayoutQNT.getEditText().getText().toString().trim();
@@ -179,7 +179,7 @@ import me.relex.circleindicator.CircleIndicator;
              @Override
              public void onDataChange(@NonNull DataSnapshot snapshot) {
                  Bag bag = snapshot.getValue(Bag.class);
-                 tenSp.setText(bag.getTen());
+                 tenSp.setText(Objects.requireNonNull(bag).getTen());
                  mota.setText(bag.getMota());
                  size.setText(bag.getSize());
                  if (bag.getSale()>0){
@@ -206,7 +206,7 @@ import me.relex.circleindicator.CircleIndicator;
                      boolean like = (boolean) snapshot.getValue();
                      if (like){
                          imgFavorite.setImageDrawable(getResources().getDrawable(R.drawable.ic_like));
-                     }else {
+                     }else{
                          imgFavorite.setImageDrawable(getResources().getDrawable(R.drawable.ic_unlike));
                      }
                  }catch (Exception e){
@@ -217,7 +217,7 @@ import me.relex.circleindicator.CircleIndicator;
                          public void onDataChange(@NonNull DataSnapshot snapshot) {
                              WishList wishList = new WishList(getIDProduct(),
                                      tenSp.getText().toString(),
-                                     snapshot.getValue().toString(),
+                                     Objects.requireNonNull(snapshot.getValue()).toString(),
                                      "Tui",false,Double.parseDouble(giaSp.getText().toString()));
 
                              myData.child("Account").child(getUserName()).child("wishList").child(getIDProduct()).setValue(wishList);

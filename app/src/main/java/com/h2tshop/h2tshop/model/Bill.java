@@ -1,6 +1,11 @@
 package com.h2tshop.h2tshop.model;
 
 public class Bill {
+    private String email,idBill;
+    private double price;
+    private boolean status;
+    private String dateBill;
+
     public Bill() {
     }
 
@@ -12,12 +17,12 @@ public class Bill {
         this.email = email;
     }
 
-    public String getProduct() {
-        return product;
+    public String getIdBill() {
+        return idBill;
     }
 
-    public void setProduct(String product) {
-        this.product = product;
+    public void setIdBill(String idBill) {
+        this.idBill = idBill;
     }
 
     public double getPrice() {
@@ -36,14 +41,19 @@ public class Bill {
         this.status = status;
     }
 
-    public Bill(String email, String product, double price, boolean status) {
-        this.email = email;
-        this.product = product;
-        this.price = price;
-        this.status = status;
+    public String getDateBill() {
+        return dateBill;
     }
 
-    private String email,product;
-    private double price;
-    private boolean status;
+    public void setDateBill(String dateBill) {
+        this.dateBill = dateBill;
+    }
+
+    public Bill(String email, String idBill, double price, boolean status, String dateBill) {
+        this.email = email;
+        this.idBill = idBill;
+        this.price = price;
+        this.status = status;
+        this.dateBill = dateBill;
+    }
 }

@@ -74,8 +74,7 @@ public class MainActivity extends AppCompatActivity {
             }else if(item.getItemId() == R.id.bill){
                 setTitle("Hóa Đơn Giao Dịch");
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new BillFragment()).commit();
-            }
-            else if (item.getItemId() == R.id.about) {
+            }else if (item.getItemId() == R.id.about) {
                 setTitle("Thông tin về chúng tôi");
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new AboutFragment()).commit();
             }else if (item.getItemId() == R.id.thoat) {

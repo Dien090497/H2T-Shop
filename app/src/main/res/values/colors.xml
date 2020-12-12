@@ -9,5 +9,7 @@
     <color name="background_a">#505050</color>
     <color name="background_b">#eaeaea</color>
     <color name="background_c">#f9f9f9</color>
+    <color name="green">#06C800</color>
+    <color name="red">#FF0000</color>
 
 </resources>

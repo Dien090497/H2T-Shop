@@ -138,7 +138,7 @@ public class DetailShoesActivity extends AppCompatActivity {
                                 tenSp.getText().toString(),
                                 spinnerSize.getSelectedItem().toString(),
                                 "GiayDa",
-                                snapshot.getValue().toString(),
+                                Objects.requireNonNull(snapshot.getValue()).toString(),
                                 sdf.format(calendar.getTime()),
                                 Integer.parseInt(qnt.getText().toString()),
                                 Double.parseDouble(giaSp.getText().toString()));
@@ -169,7 +169,7 @@ public class DetailShoesActivity extends AppCompatActivity {
 
             ok.setOnClickListener(v12 -> {
 
-                if (textInputLayoutQNT.getEditText().getText().toString().trim().equals("")) {
+                if (Objects.requireNonNull(textInputLayoutQNT.getEditText()).getText().toString().trim().equals("")) {
                     textInputLayoutQNT.setError("Số lượng trống!");
                 } else {
                     String _qnt = textInputLayoutQNT.getEditText().getText().toString().trim();
@@ -207,7 +207,7 @@ public class DetailShoesActivity extends AppCompatActivity {
             @SuppressLint("ResourceAsColor")
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                linkList.add(snapshot.getValue().toString());
+                linkList.add(Objects.requireNonNull(snapshot.getValue()).toString());
 
                 imageProductAdapter = new ImageProductAdapter(linkList);
                 pager.setAdapter(imageProductAdapter);
@@ -263,7 +263,7 @@ public class DetailShoesActivity extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             WishList wishList = new WishList(bShoes.getString("id"),
                                     tenSp.getText().toString(),
-                                    snapshot.getValue().toString(),
+                                    Objects.requireNonNull(snapshot.getValue()).toString(),
                                     "GiayDa",false,Double.parseDouble(giaSp.getText().toString()));
 
                             myData.child("Account").child(_email).child("wishList").child(bShoes.getString("id")).setValue(wishList);
@@ -307,7 +307,7 @@ public class DetailShoesActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Shoes shoes = snapshot.getValue(Shoes.class);
-                tenSp.setText(shoes.getTen());
+                tenSp.setText(Objects.requireNonNull(shoes).getTen());
                 if (shoes.getSale()>0){
                     sale.setText("(-"+df.format(shoes.getSale())+"%)");
                     giaSp.setText(df.format(shoes.getGia()-(shoes.getGia()*shoes.getSale()/100)));
@@ -332,7 +332,7 @@ public class DetailShoesActivity extends AppCompatActivity {
         myData.child("GiayDa").child(bShoes.getString("id")).child("size").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                sizeList.add(snapshot.getValue().toString());
+                sizeList.add(Objects.requireNonNull(snapshot.getValue()).toString());
 
                 ArrayAdapter arrayAdapter = new ArrayAdapter(DetailShoesActivity.this, android.R.layout.simple_spinner_item,sizeList);
                 arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

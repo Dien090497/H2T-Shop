@@ -23,6 +23,7 @@ import com.squareup.picasso.Picasso;
 
 import java.text.DecimalFormat;
 import java.util.List;
+import java.util.Objects;
 
 public class ShopShoesAdapter extends BaseAdapter {
     DatabaseReference myData;
@@ -88,7 +89,7 @@ public class ShopShoesAdapter extends BaseAdapter {
         myData.child("GiayDa").child(shoes.getId()).child("link").child("link1").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Picasso.get().load(snapshot.getValue().toString()).into(holder.imgProduct);
+                Picasso.get().load(Objects.requireNonNull(snapshot.getValue()).toString()).into(holder.imgProduct);
             }
 
             @Override
