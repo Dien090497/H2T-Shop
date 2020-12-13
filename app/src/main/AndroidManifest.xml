@@ -10,8 +10,12 @@
         android:roundIcon="@drawable/logo_label"
         android:supportsRtl="true"
         android:theme="@style/Theme.H2TShop">
-        <activity android:name=".activity.BillActivity"></activity>
-        <activity android:name=".activity.DetailBillActivity" />
+        <activity android:name=".activity.BillActivity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".activity.DetailBillActivity"
+            android:parentActivityName=".activity.BillActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activity.SaleShopActivity"
             android:parentActivityName=".MainActivity"
