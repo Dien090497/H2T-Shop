@@ -5,9 +5,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.h2tshop.h2tshop.activity.BillActivity;
 import com.h2tshop.h2tshop.activity.CartActivity;
 import com.h2tshop.h2tshop.activity.LoginSignupActivity;
-import com.h2tshop.h2tshop.fragment.BillFragment;
 import com.h2tshop.h2tshop.fragment.ShopFragment;
 
 import com.h2tshop.h2tshop.fragment.AccountFragment;
@@ -27,7 +27,6 @@ import androidx.appcompat.widget.Toolbar;
 public class MainActivity extends AppCompatActivity {
     FirebaseAuth myAuth;
     FirebaseUser user;
-//asdsadsad
     NavigationView navigationView;
 
     DrawerLayout drawerLayout;
@@ -72,8 +71,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent iCart = new Intent(MainActivity.this, CartActivity.class);
                 startActivity(iCart);
             }else if(item.getItemId() == R.id.bill){
-                setTitle("Hóa Đơn Giao Dịch");
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new BillFragment()).commit();
+                Intent iBill = new Intent(MainActivity.this, BillActivity.class);
+                startActivity(iBill);
             }else if (item.getItemId() == R.id.about) {
                 setTitle("Thông tin về chúng tôi");
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new AboutFragment()).commit();

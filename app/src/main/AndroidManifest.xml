@@ -4,85 +4,85 @@
 
     <application
         android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_descriptor"
         android:icon="@drawable/logo_label"
         android:label="@string/app_name"
         android:roundIcon="@drawable/logo_label"
         android:supportsRtl="true"
-        android:theme="@style/Theme.H2TShop"
-        android:fullBackupContent="@xml/backup_descriptor">
+        android:theme="@style/Theme.H2TShop">
+        <activity android:name=".activity.BillActivity"></activity>
+        <activity android:name=".activity.DetailBillActivity" />
         <activity
             android:name=".activity.SaleShopActivity"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".activity.DetailJewelryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.DetailJewelryActivity"
             android:parentActivityName=".activity.ShopJewelryActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".activity.ShopJewelryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ShopJewelryActivity"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"/>
-
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.DetailShoesActivity"
             android:parentActivityName=".activity.ShopShoesActivity"
-            android:screenOrientation="portrait"/>
-
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.ShopShoesActivity"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"/>
-
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.DetailClothesActivity"
             android:parentActivityName=".activity.ShopClothesActivity"
-            android:screenOrientation="portrait"/>
-
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.ShopClothesActivity"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.CartActivity"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.DetailBagActivity"
             android:parentActivityName=".activity.ShopBagActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.ShopBagActivity"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.ChangeAvatarActivity"
             android:parentActivityName=".activity.EditInfoActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.ChangeInfoActivity"
             android:parentActivityName=".activity.EditInfoActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.ChangePasswordActivity"
             android:parentActivityName=".activity.EditInfoActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.EditInfoActivity"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.WishListActivity"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.AddInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AddInfoActivity"
             android:parentActivityName=".activity.SignUpActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.H2TShop.NoActionBar"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.LoginSignupActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.H2TShop.NoActionBar" />
+        <activity
+            android:name=".activity.LoginSignupActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -93,11 +93,11 @@
         <activity
             android:name=".activity.LoginActivity"
             android:parentActivityName=".activity.LoginSignupActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.SignUpActivity"
             android:parentActivityName=".activity.LoginSignupActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

@@ -40,7 +40,7 @@
     <string name="account">Tài Khoản</string>
     <string name="cart">Giỏ Hàng</string>
     <string name="about">Về Chúng Tôi</string>
-    <string name="bill">Hóa Đơn Giao Dịch</string>
+    <string name="bill">Lịch Sử Giao Dịch</string>
     <string name="logout">Đăng Xuất</string>
     <string name="clothes">Quần áo</string>
     <string name="bag">Túi</string>
@@ -71,6 +71,7 @@
     <string name="id_bill">Mã HĐ:  </string>
     <string name="delivering">Đang chuyển</string>
     <string name="delivered">Đã chuyển</string>
+    <string name="detail_bill">Chi Tiết Hóa Đơn</string>
 
 
 </resources>
